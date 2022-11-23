@@ -14,6 +14,10 @@
 		D60A8B77292D368700C25B78 /* TimeClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8B76292D368700C25B78 /* TimeClockTests.swift */; };
 		D60A8B81292D368700C25B78 /* TimeClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8B80292D368700C25B78 /* TimeClockUITests.swift */; };
 		D60A8B83292D368700C25B78 /* TimeClockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8B82292D368700C25B78 /* TimeClockUITestsLaunchTests.swift */; };
+		D60A8B90292D36A700C25B78 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8B8F292D36A700C25B78 /* UserModel.swift */; };
+		D60A8B92292D38E700C25B78 /* PunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8B91292D38E700C25B78 /* PunchModel.swift */; };
+		D60A8B94292E6EE000C25B78 /* PunchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8B93292E6EE000C25B78 /* PunchHistoryView.swift */; };
+		D60A8B96292E6F9F00C25B78 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8B95292E6F9F00C25B78 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		D60A8B7C292D368700C25B78 /* TimeClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60A8B80292D368700C25B78 /* TimeClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeClockUITests.swift; sourceTree = "<group>"; };
 		D60A8B82292D368700C25B78 /* TimeClockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeClockUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D60A8B8F292D36A700C25B78 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D60A8B91292D38E700C25B78 /* PunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchModel.swift; sourceTree = "<group>"; };
+		D60A8B93292E6EE000C25B78 /* PunchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchHistoryView.swift; sourceTree = "<group>"; };
+		D60A8B95292E6F9F00C25B78 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,10 @@
 			children = (
 				D60A8B65292D368600C25B78 /* TimeClockApp.swift */,
 				D60A8B67292D368600C25B78 /* ContentView.swift */,
+				D60A8B93292E6EE000C25B78 /* PunchHistoryView.swift */,
+				D60A8B8F292D36A700C25B78 /* UserModel.swift */,
+				D60A8B95292E6F9F00C25B78 /* Users.swift */,
+				D60A8B91292D38E700C25B78 /* PunchModel.swift */,
 				D60A8B69292D368700C25B78 /* Assets.xcassets */,
 				D60A8B6B292D368700C25B78 /* Preview Content */,
 			);
@@ -258,6 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60A8B68292D368600C25B78 /* ContentView.swift in Sources */,
+				D60A8B90292D36A700C25B78 /* UserModel.swift in Sources */,
+				D60A8B94292E6EE000C25B78 /* PunchHistoryView.swift in Sources */,
+				D60A8B92292D38E700C25B78 /* PunchModel.swift in Sources */,
+				D60A8B96292E6F9F00C25B78 /* Users.swift in Sources */,
 				D60A8B66292D368600C25B78 /* TimeClockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
