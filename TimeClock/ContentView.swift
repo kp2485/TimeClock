@@ -9,10 +9,10 @@ import SwiftUI
 
 var user = kylePeterson
 
-var clockIn: Punch? = nil
+var punchIn: Punch? = nil
 var lunchOut: Punch? = nil
 var lunchIn: Punch? = nil
-var clockOut: Punch? = nil
+var punchOut: Punch? = nil
 
 let dateFormatter = DateFormatter()
 
@@ -29,7 +29,7 @@ struct ContentView: View {
         // PUNCH DEFINITIONS
         let clockInTitle: String = "Clock me in"
         let clockInAction: () -> Void = {
-            clockIn = Punch(id: user.id, time: Date(), punchType: .punchIn)
+            punchIn = Punch(id: user.id, time: Date(), punchType: .punchIn)
             viewState = .punchedIn
         }
         let lunchOutTitle: String = "Start my lunch"
@@ -44,9 +44,9 @@ struct ContentView: View {
         }
         let clockOutTitle: String = "Clock me out"
         let clockOutAction: () -> Void = {
-            clockOut = Punch(id: user.id, time: Date(), punchType: .punchOut)
-            user.punches.append(clockIn!)
-            clockIn = nil
+            punchOut = Punch(id: user.id, time: Date(), punchType: .punchOut)
+            user.punches.append(punchIn!)
+            punchIn = nil
             if lunchOut != nil {
                 user.punches.append(lunchOut!)
             }
@@ -55,8 +55,8 @@ struct ContentView: View {
                 user.punches.append(lunchIn!)
             }
             lunchIn = nil
-            user.punches.append(clockOut!)
-            clockOut = nil
+            user.punches.append(punchOut!)
+            punchOut = nil
             viewState = .punchedOut
         }
         
@@ -74,7 +74,7 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .buttonStyle(.bordered)
             } else if viewState == .punchedIn {
-                Text("You punched in at \(clockIn?.time ?? Date())")
+                Text("You punched in at \(punchIn?.time ?? Date())")
                     .padding(.bottom)
                 if lunchOut == nil {
                     Button(lunchOutTitle, action: lunchOutAction)
@@ -98,10 +98,10 @@ struct ContentView: View {
             
             Spacer()
             
-            Text("IN: \(clockIn?.time.formatted(date: .long, time: .shortened) ?? "nil")")
+            Text("IN: \(punchIn?.time.formatted(date: .long, time: .shortened) ?? "nil")")
             Text("Lunch OUT: \(lunchOut?.time.formatted(date: .long, time: .shortened) ?? "nil")")
             Text("Lunch IN: \(lunchIn?.time.formatted(date: .long, time: .shortened) ?? "nil")")
-            Text("OUT: \(clockOut?.time.formatted(date: .long, time: .shortened) ?? "nil")")
+            Text("OUT: \(punchOut?.time.formatted(date: .long, time: .shortened) ?? "nil")")
             
             Spacer()
             
