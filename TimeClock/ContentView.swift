@@ -17,18 +17,20 @@ var clockOut: Punch? = nil
 let dateFormatter = DateFormatter()
 
 enum ViewState {
-    case clockedOut, clockedIn, onLunch
+    case punchedOut, punchedIn, onLunch
 }
 
 struct ContentView: View {
     
-    @State private var viewState: ViewState = .clockedOut
+    @State private var viewState: ViewState = .punchedOut
     
     var body: some View {
+        
+        // PUNCH DEFINITIONS
         let clockInTitle: String = "Clock me in"
         let clockInAction: () -> Void = {
             clockIn = Punch(id: user.id, time: Date(), punchType: .punchIn)
-            viewState = .clockedIn
+            viewState = .punchedIn
         }
         let lunchOutTitle: String = "Start my lunch"
         let lunchOutAction: () -> Void = {
@@ -38,7 +40,7 @@ struct ContentView: View {
         let lunchInTitle: String = "End my lunch"
         let lunchInAction: () -> Void = {
             lunchIn = Punch(id: user.id, time: Date(), punchType: .lunchIn)
-            viewState = .clockedIn
+            viewState = .punchedIn
         }
         let clockOutTitle: String = "Clock me out"
         let clockOutAction: () -> Void = {
@@ -55,7 +57,7 @@ struct ContentView: View {
             lunchIn = nil
             user.punches.append(clockOut!)
             clockOut = nil
-            viewState = .clockedOut
+            viewState = .punchedOut
         }
         
         
@@ -63,7 +65,7 @@ struct ContentView: View {
             Text("Good morning, \(user.firstName)!")
                 .font(.system(.largeTitle))
                 .padding()
-            if viewState == .clockedOut {
+            if viewState == .punchedOut {
                 Text("Would you like to clock in?")
                     .padding(.bottom)
                 Button(clockInTitle, action: clockInAction)
@@ -71,7 +73,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     .buttonStyle(.bordered)
-            } else if viewState == .clockedIn {
+            } else if viewState == .punchedIn {
                 Text("You punched in at \(clockIn?.time ?? Date())")
                     .padding(.bottom)
                 if lunchOut == nil {
