@@ -14,7 +14,6 @@ struct PunchHistoryView: View {
     var body: some View {
         ForEach (user.punches, id: \.self) { punch in
             Text("\(punch.punchType.rawValue): \(punch.time.formatted(date: .long, time: .shortened))")
-            
         }
     }
 }

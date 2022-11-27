@@ -7,4 +7,4 @@
 
 import Foundation
 
-var kylePeterson = User(firstName: "Kyle", lastName: "Peterson", punches: [])
+var kylePeterson = User(academyID: "kdpeters", firstName: "Kyle", lastName: "Peterson", punches: [])
