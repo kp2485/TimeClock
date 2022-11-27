@@ -16,8 +16,10 @@ var punchOut: Punch? = nil
 
 let dateFormatter = DateFormatter()
 
-enum ViewState {
-    case punchedOut, punchedIn, onLunch
+enum ViewState: String {
+    case punchedOut = "punched out",
+         punchedIn = "punched in",
+         onLunch = "on lunch"
 }
 
 struct ContentView: View {
