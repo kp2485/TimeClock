@@ -13,7 +13,7 @@ var punchIn: Punch? = nil
 var lunchOut: Punch? = nil
 var lunchIn: Punch? = nil
 var punchOut: Punch? = nil
-var dailyPunch = [punchIn, lunchOut, lunchIn, punchOut]
+
 
 
 let dateFormatter = DateFormatter()
