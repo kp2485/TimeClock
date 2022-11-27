@@ -72,7 +72,7 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .buttonStyle(.bordered)
             } else if viewState == .clockedIn {
-                Text("You started selling your life away at \(clockIn?.time ?? Date())")
+                Text("You punched in at \(clockIn?.time ?? Date())")
                     .padding(.bottom)
                 if lunchOut == nil {
                     Button(lunchOutTitle, action: lunchOutAction)
