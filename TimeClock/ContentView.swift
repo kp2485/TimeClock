@@ -14,8 +14,6 @@ var lunchOut: Punch? = nil
 var lunchIn: Punch? = nil
 var punchOut: Punch? = nil
 
-
-
 let dateFormatter = DateFormatter()
 
 enum ViewState: String {
