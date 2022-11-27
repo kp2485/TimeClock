@@ -13,6 +13,8 @@ var punchIn: Punch? = nil
 var lunchOut: Punch? = nil
 var lunchIn: Punch? = nil
 var punchOut: Punch? = nil
+var dailyPunch = [punchIn, lunchOut, lunchIn, punchOut]
+
 
 let dateFormatter = DateFormatter()
 
@@ -62,7 +64,7 @@ struct ContentView: View {
             viewState = .punchedOut
         }
         
-        
+        // VIEW BODY
         VStack {
             Text("Good morning, \(user.firstName)!")
                 .font(.system(.largeTitle))
@@ -88,7 +90,7 @@ struct ContentView: View {
                     .buttonStyle(.bordered)
             } else if viewState == .onLunch {
                 
-                var timeSinceLunchStarted = Date(timeInterval: .greatestFiniteMagnitude, since: lunchOut!.time)
+                let timeSinceLunchStarted = Date(timeInterval: .greatestFiniteMagnitude, since: lunchOut!.time)
                 
                 Text("You have been at lunch for \(timeSinceLunchStarted)")
                     .padding(.bottom)
@@ -100,6 +102,7 @@ struct ContentView: View {
             
             Spacer()
             
+            // USER PUNCH MONITOR
             Text("IN: \(punchIn?.time.formatted(date: .long, time: .shortened) ?? "nil")")
             Text("Lunch OUT: \(lunchOut?.time.formatted(date: .long, time: .shortened) ?? "nil")")
             Text("Lunch IN: \(lunchIn?.time.formatted(date: .long, time: .shortened) ?? "nil")")
