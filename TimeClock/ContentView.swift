@@ -51,12 +51,14 @@ struct ContentView: View {
             punchIn = nil
             if lunchOut != nil {
                 user.punches.append(lunchOut!)
+                lunchOut = nil
             }
-            lunchOut = nil
+            
             if lunchIn != nil {
                 user.punches.append(lunchIn!)
+                lunchIn = nil
             }
-            lunchIn = nil
+            
             user.punches.append(punchOut!)
             punchOut = nil
             viewState = .punchedOut
