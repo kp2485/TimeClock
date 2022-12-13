@@ -25,6 +25,7 @@ enum ViewState: String {
 struct ContentView: View {
     
     @State private var viewState: ViewState = .punchedOut
+    @State private var timeIn = "00:00"
     
     var body: some View {
         
@@ -53,15 +54,14 @@ struct ContentView: View {
                 user.punches.append(lunchOut!)
                 lunchOut = nil
             }
-            
             if lunchIn != nil {
                 user.punches.append(lunchIn!)
                 lunchIn = nil
             }
-            
             user.punches.append(punchOut!)
             punchOut = nil
             viewState = .punchedOut
+            dump(user.punches)
         }
         
         // VIEW BODY
@@ -79,7 +79,9 @@ struct ContentView: View {
                     .buttonStyle(.bordered)
             } else if viewState == .punchedIn {
                 Text("You punched in at \(punchIn?.time ?? Date())")
-                    .padding(.bottom)
+                    .padding()
+                Text("You have been clocked in for \(timeIn) minutes today")
+                    .padding()
                 if lunchOut == nil {
                     Button(lunchOutTitle, action: lunchOutAction)
                     .padding(.bottom)
